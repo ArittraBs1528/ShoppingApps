@@ -11,7 +11,7 @@ import com.example.shoopinglist.data.db.entities.ShoppingItem
 import com.example.shoopinglist.ui.shoppinglist.shoppingViewmodel
 
 class ShoppingItemAdapter(
-    var items: ArrayList<ShoppingItem>,
+    var items: List<ShoppingItem>,
     private var viewmodel: shoppingViewmodel
 ) : RecyclerView.Adapter<ShoppingItemAdapter.ShoppingViewHolder>() {
     inner class ShoppingViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -38,23 +38,23 @@ class ShoppingItemAdapter(
 
         holder.itemViews.text = currentShoppingItem.name
         holder.itemCount.text = currentShoppingItem.amount.toString()
-        holder.deleteButton.setOnClickListener {
-            viewmodel.delete(currentShoppingItem)
-        }
-        holder.plusButton.setOnClickListener {
-
-            currentShoppingItem.amount++
-            viewmodel.upsert(currentShoppingItem)
-        }
-        holder.minusButton.setOnClickListener {
-            if(currentShoppingItem.amount>0)
-                currentShoppingItem.amount--
-            viewmodel.upsert(currentShoppingItem)
-        }
-
-        holder.deleteButton.setOnClickListener {
-            viewmodel.delete(currentShoppingItem)
-        }
+//        holder.deleteButton.setOnClickListener {
+//            viewmodel.delete(currentShoppingItem)
+//        }
+//        holder.plusButton.setOnClickListener {
+//
+//            currentShoppingItem.amount++
+//            viewmodel.upsert(currentShoppingItem)
+//        }
+//        holder.minusButton.setOnClickListener {
+//            if(currentShoppingItem.amount>0)
+//                currentShoppingItem.amount--
+//            viewmodel.upsert(currentShoppingItem)
+//        }
+//
+//        holder.deleteButton.setOnClickListener {
+//            viewmodel.delete(currentShoppingItem)
+//        }
 
     }
 }
