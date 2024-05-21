@@ -56,9 +56,9 @@ class ShoppingActivity : AppCompatActivity() {
 
         list.toList()
 
-        var items: List<ShoppingItem>
+
 
         binding.rcv1.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL,false)
-        binding.rcv1.adapter = ShoppingItemAdapter(items,viewModel)
+        binding.rcv1.adapter = ShoppingItemAdapter(list,viewModel)
     }
 }
